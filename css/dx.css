@@ -140,7 +140,7 @@ h3 {
 
 
 .headerbackground {
-	background-image: url("http://depts.washington.edu/wittexts/imgs/header_lg.jpg");
+	background-image: url("../imgs/header_lg.jpg");
 	width: 97.0vw;
 	height: 40.0vh;
 	display: flex;
