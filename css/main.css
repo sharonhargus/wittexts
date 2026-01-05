@@ -1,0 +1,29 @@
+html {
+        width:100%;
+        margin:0;
+        padding:0;
+}
+body    {
+        background-color:#000000;
+        color:#FFFFFF;
+        font-family:"Bree","Gotham","Arial",serif;
+}
+
+#container {
+        width:90%;
+        margin:auto;
+}
+#header {
+        border:2px solid #FFFFFF;
+        background-color:#000080;
+        padding:5px;
+}
+#header a {
+        text-decoration:none;
+        color:#FFFFFF;
+}
+#content {
+        background-color: #FFFFFF;
+        padding:10px;
+        color:#000000;
+}

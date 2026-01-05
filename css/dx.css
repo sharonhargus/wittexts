@@ -1,0 +1,212 @@
+.video { text-align:center }
+
+.igt          { display: inline-table; 
+                margin-bottom: 50px }
+#window .igt { margin:auto; }
+.words, .glosses { display: table-row }
+.word, .gloss  { display: table-cell;
+                 padding: 0px 10px 0px 10px; }
+
+.word::after {
+    display:block;
+    content:attr(title);
+    font-weight:bold;
+    height:1px;
+    color:transparent;
+    overflow:hidden;
+    margin-bottom:-1px;
+}
+
+.roundbox {
+	border-radius: 25px;
+	border: 8px solid #aaa;
+	width: 20%;
+	height: 150px;
+	padding: 50px 0px 0px 0px;
+	margin: 50px;
+	font-size: 3.0em;
+}
+
+.trans { text-align:center; display: table-caption;
+		 white-space:nowrap;
+         caption-side: bottom;
+         background: inherit  }
+.audio { display: none }
+.active { background-color: #edf;}
+.notelink { font-size:x-small;
+            vertical-align:top }
+.c-word{ color: green;
+         font-weight: bold }
+		 
+audio { width:75%; }
+
+h1 { 
+  text-align: center;
+  color: #326;
+  font-size: 2.75em;
+  margin-bottom: 1px;
+  font-family: 'Bree Serif', serif;
+}
+ 
+h2 { 
+  margin-top: 1px;
+  text-align: center;
+  color: #333;
+  font-size: 1.75em;
+  letter-spacing: 0.05em;
+  font-family: 'Abel', sans-serif;
+}
+ 
+h3 { 
+  margin-top: 1px;
+  text-align: center;
+  color: #333;
+  font-size: 1.5em;
+  letter-spacing: 0.05em;
+  font-family: 'Abel', sans-serif;
+}
+
+#text { 
+  padding:10px 50px 10px 50px;
+  overflow-y:scroll;
+  height: 600px;
+  border: 4px solid #ccc;
+  border-top: none;
+  background-color:#eee; 
+}
+#window { 
+  padding:10px 50px 10px 50px;
+  font-size:1.5em;
+  font-weight:500;
+  border: 1px solid #ccc; 
+}
+
+/*#anndiv { position: relative;
+          border: 1px solid black;
+          height: 300px;
+          width: 450px; 
+          top 300px;  } */
+
+#main-container { width:80%; 
+                  margin:auto; 
+                  margin-bottom: 140px; }
+
+.normaltext {
+  font-size:1.25em;
+  width:80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.menu {
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.menu a {
+  width: 200px;
+  color: #fff;
+  padding: 10px 20px 10px 20px;
+  background-color: #226655;
+  text-decoration: none;
+  font-weight: normal;
+  display: block;
+  text-align: center;	
+  margin: 0px 5px 10px 5px;
+  border-radius: 10px;
+  border: 4px solid #ccc;
+  font-family: 'Bree Serif', serif; 
+}
+
+.menu a:hover { 
+  color: #226655;
+  background-color: #ddd;
+}
+
+.flexwrap {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+
+.headerbackground {
+	background-image: url("http://depts.washington.edu/wittexts/imgs/header_lg.jpg");
+	width: 97.0vw;
+	height: 40.0vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border: 10px solid #ccc;
+}
+
+.headerkwa {
+	width: 10.0vw
+	margin-left: 5%;
+	flex-shrink: 2;
+	margin-top: 2.0vh;
+}
+
+.headertexts {
+	order: 1;
+	width: 30.0vw;
+	margin-right: 5%;
+	flex-shrink: 2;
+	align-self: flex-end;
+	margin-bottom: 9px;
+}
+
+.mainmiddle{
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.footer {
+	background-color: #ccc;
+	height: 50px;
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.footertext {
+	order:1;
+	padding: 15px 20px 10px 60px;
+	font-weight: normal;
+        font-family: 'Abel', sans-serif;
+	font-size: 2.0vmin;
+}
+
+.footerbutton {
+	order:2;
+	width: 200px;
+	color: #fff;
+	padding: 10px 20px 10px 20px;
+	background-color: #332266;
+	text-decoration: none;
+	font-weight: normal;
+	display: block;
+	font-size:2.0vmin;
+	border: 4px solid #ccc;
+	font-family: 'Bree Serif', serif;
+}
+
+.activecol { background: #ffa; }
+.tseditor { font-size:50%; padding-left:10px; padding-right:10px; }
+
+p.english {
+	}
+
