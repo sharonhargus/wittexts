@@ -893,6 +893,53 @@ function AudioPage() {
 		this.audioHolder.appendChild(this.audios[this.current]);
 	}.bind(this);
 
+	// ── ±15s skip buttons ────────────────────────────────────────────
+	// Two buttons rendered as siblings of #audio-holder (not inside it,
+	// since loadAudioHolder() wipes audioHolder.innerHTML on each track
+	// switch). Click handlers read audios[current] at click time so
+	// they always operate on whichever track is currently loaded.
+	this.buildSkipButtons = function(){
+		// Inject CSS once per page; safe to re-run.
+		if (!document.getElementById("skip-btn-style")) {
+			var s = document.createElement("style");
+			s.id = "skip-btn-style";
+			s.textContent =
+				".skip-buttons{display:flex;justify-content:center;gap:12px;" +
+				"margin:8px auto 0 auto;}" +
+				".skip-btn{padding:6px 16px;background:#226655;color:#fff;" +
+				"border:2px solid #ccc;border-radius:6px;cursor:pointer;" +
+				"font-family:'Bree Serif',serif;font-size:0.95em;line-height:1.2;}" +
+				".skip-btn:hover{background:#ddd;color:#226655;}" +
+				".skip-btn:active{transform:translateY(1px);}";
+			document.head.appendChild(s);
+		}
+		// Don't double-attach if init runs twice.
+		if (this.skipWrap && this.skipWrap.parentNode) return;
+		this.skipWrap = document.createElement("div");
+		this.skipWrap.className = "skip-buttons";
+		var back = document.createElement("button");
+		back.type = "button"; back.className = "skip-btn";
+		back.textContent = "⏪ 15s";
+		back.title = "Rewind 15 seconds";
+		back.addEventListener("click", function(){
+			var a = this.audios[this.current];
+			if (a) a.currentTime = Math.max(0, a.currentTime - 15);
+		}.bind(this));
+		var fwd = document.createElement("button");
+		fwd.type = "button"; fwd.className = "skip-btn";
+		fwd.textContent = "15s ⏩";
+		fwd.title = "Skip ahead 15 seconds";
+		fwd.addEventListener("click", function(){
+			var a = this.audios[this.current];
+			if (a) a.currentTime = Math.min(a.duration || Infinity, a.currentTime + 15);
+		}.bind(this));
+		this.skipWrap.appendChild(back);
+		this.skipWrap.appendChild(fwd);
+		this.audioHolder.parentNode.insertBefore(
+			this.skipWrap, this.audioHolder.nextSibling);
+	}.bind(this);
+	this.buildSkipButtons();
+
 	// update the current IGT showing in the window
 	// update any highlighting the in the text scroll area
 	this.showIGT = function(keepstamps){
