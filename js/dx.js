@@ -919,7 +919,7 @@ function AudioPage() {
 		this.skipWrap.className = "skip-buttons";
 		var back = document.createElement("button");
 		back.type = "button"; back.className = "skip-btn";
-		back.textContent = "⏪ 15s";
+		back.textContent = "15 seconds backward";
 		back.title = "Rewind 15 seconds";
 		back.addEventListener("click", function(){
 			var a = this.audios[this.current];
@@ -927,7 +927,7 @@ function AudioPage() {
 		}.bind(this));
 		var fwd = document.createElement("button");
 		fwd.type = "button"; fwd.className = "skip-btn";
-		fwd.textContent = "15s ⏩";
+		fwd.textContent = "15 seconds forward";
 		fwd.title = "Skip ahead 15 seconds";
 		fwd.addEventListener("click", function(){
 			var a = this.audios[this.current];
