@@ -1,0 +1,12 @@
+# Audio files belong on archive.org, not in the website repo
+*.mp3
+*.wav
+*.aif
+*.aiff
+
+# LaTeX source files belong in the source folder, not in the website repo
+*.tex
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
