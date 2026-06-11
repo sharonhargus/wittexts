@@ -27,3 +27,79 @@ body    {
         padding:10px;
         color:#000000;
 }
+
+/* Intro text and description lists */
+#text {
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#text pre,
+#text .intro-pre {
+  white-space: pre-line; /* wrap long lines; blank lines stay as paragraph breaks */
+  font-family: 'Arial', sans-serif;
+  line-height: 1.3;
+  margin: 0 0 0.4em 0;
+}
+
+#text .intro-paragraph {
+  margin: 0 0 0.4em 0;
+  line-height: 1.35;
+  font-family: 'Arial', sans-serif;
+}
+
+#text dl {
+  margin: 0;
+  padding: 0;
+}
+
+#text dt,
+#text dd {
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+}
+
+#text dt {
+  display: block;
+  font-weight: bold;
+}
+
+#text dt::before {
+  content: "- ";
+  font-weight: normal;
+}
+
+#text dd {
+  display: block;
+  margin-left: 0.8em;
+}
+
+.igt {
+  display: inline-table;
+  margin-bottom: 25px;
+}
+
+.words,
+.glosses {
+  display: table-row;
+}
+
+.word,
+.gloss {
+  display: table-cell;
+  padding: 0 5px 0 5px;
+  white-space: nowrap;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.trans {
+  text-align: left;
+  display: table-caption;
+  white-space: nowrap;
+  caption-side: bottom;
+  background: inherit;
+}
+
