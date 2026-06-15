@@ -526,7 +526,9 @@ function ChapmanPage(){
 
 	this.nextTrack = function() {
 		console.log("ap.nextTrack; ap.current:",this.current);
-		if(this.current<this.audios.length){
+		// stop one short of the end: advancing on the LAST track's 'ended'
+		// event would set current past the array and deref audios[undefined].
+		if(this.current<this.audios.length-1){
 			this.current++;
 			this.load();
 			this.audios[this.current]
@@ -904,7 +906,7 @@ function AudioPage() {
 			var s = document.createElement("style");
 			s.id = "skip-btn-style";
 			s.textContent =
-				".skip-buttons{display:flex;justify-content:center;gap:12px;" +
+				".skip-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;" +
 				"margin:8px auto 0 auto;}" +
 				".skip-btn{padding:6px 16px;background:#226655;color:#fff;" +
 				"border:2px solid #ccc;border-radius:6px;cursor:pointer;" +

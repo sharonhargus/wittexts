@@ -1,11 +1,18 @@
+* { box-sizing: border-box; }
+html, body { max-width: 100%; overflow-x: hidden; }
+audio { max-width: 100%; }
+img { max-width: 100%; height: auto; }
+
 .video { text-align:center }
 
-.igt          { display: inline-table; 
-                margin-bottom: 50px }
+.igt          { display: block;
+                margin-bottom: 25px }
 #window .igt { margin:auto; }
-.words, .glosses { display: table-row }
-.word, .gloss  { display: table-cell;
-                 padding: 0px 10px 0px 10px; }
+/* Each word sits in a column above its gloss; the row of columns flex-wraps
+   to the page width instead of overflowing. */
+.words        { display: flex; flex-wrap: wrap; align-items: flex-end; }
+.wordgloss    { display: flex; flex-direction: column; padding: 0 10px 0 0; }
+.word, .gloss { display: block; white-space: normal; overflow-wrap: anywhere; }
 
 .word::after {
     display:block;
@@ -27,9 +34,9 @@
 	font-size: 3.0em;
 }
 
-.trans { text-align:center; display: table-caption;
-		 white-space:normal;
-         caption-side: bottom;
+.trans { display: block; text-align: left;
+		 white-space: normal;
+         margin-top: 0.25em;
          background: inherit  }
 .audio { display: none }
 .active { background-color: #edf;}
@@ -66,13 +73,11 @@ h3 {
   font-family: 'Abel', sans-serif;
 }
 
-#text { 
+#text {
   padding:10px 50px 10px 50px;
-  overflow-y:scroll;
-  height: 600px;
   border: 4px solid #ccc;
   border-top: none;
-  background-color:#eee; 
+  background-color:#eee;
 }
 #window { 
   padding:10px 50px 10px 50px;
@@ -149,8 +154,8 @@ h3 {
 	border: 10px solid #ccc;
 }
 
-.headerkwa {
-	width: 10.0vw
+.headerkwa, .headerlangname, .headerdeg {
+	width: 30.0vw;
 	margin-left: 5%;
 	flex-shrink: 2;
 	margin-top: 2.0vh;
@@ -259,29 +264,35 @@ p.english {
 }
 
 .igt {
-  display: inline-table;
+  display: block;
   margin-bottom: 25px;
 }
 
-.words,
-.glosses {
-  display: table-row;
+.words {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.wordgloss {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px 0 0;
 }
 
 .word,
 .gloss {
-  display: table-cell;
-  padding: 0 5px 0 5px;
-  white-space: nowrap;
-  word-break: normal;
-  overflow-wrap: normal;
+  display: block;
+  padding: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .trans {
+  display: block;
   text-align: left;
-  display: table-caption;
-  white-space: nowrap;
-  caption-side: bottom;
+  white-space: normal;
+  margin-top: 0.25em;
   background: inherit;
 }
 
