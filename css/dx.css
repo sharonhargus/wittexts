@@ -236,7 +236,7 @@ p.english {
 #text .intro-pre {
   white-space: pre-line; /* wrap long lines; blank lines stay as paragraph breaks */
   font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
-  color: #4a4a4a;
+  color: #2d2d2d;
   line-height: 1.5;
   margin: 0 0 0.6em 0;
 }
@@ -247,7 +247,7 @@ p.english {
 #text .intro-paragraph {
   margin: 0 0 0.6em 0;
   line-height: 1.5;
-  color: #4a4a4a;
+  color: #2d2d2d;
   font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
 }
 
